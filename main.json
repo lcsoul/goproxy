@@ -1,0 +1,35 @@
+{
+	"logtostderr": true,
+	"Addr": "127.0.0.1:8080",
+	"http": {
+		"mode": "h1",
+		"KeepAlivePeriod": 0,
+		"ReadTimeout": 600,
+		"WriteTimeout": 3600,
+		"Certificate": "goproxy.pem",
+		"PrivateKey": "goproxy.key"
+	},
+	"groupcache": {
+		// "addr": "127.0.0.1:10080",
+		"peers": [
+			"http://127.0.0.1:10080"
+		]
+	},
+	"filters": {
+		"request": [
+			// "auth",
+			"stripssl"
+		],
+		"roundtrip": [
+			"autoproxy",
+			// "auth",
+			// "iplist",
+			// "vps",
+			"php",
+			// "gae",
+			"direct"
+		],
+		"response": [
+		]
+	}
+}

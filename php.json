@@ -1,0 +1,13 @@
+{
+	"fetchservers": [
+		{
+			"url": "https://lcsoul.herokuapp.com/index.go",
+			"password": "214512362",
+			"sslverify": true
+		}
+	],
+	"sites": [
+		"*"
+	],
+	"transport": "direct"
+}
